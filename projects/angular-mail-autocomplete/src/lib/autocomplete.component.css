@@ -1,0 +1,88 @@
+@import 'https://use.fontawesome.com/releases/v5.0.10/css/all.css';
+@import 'https://fonts.googleapis.com/css?family=Lato:300';
+
+.panel {
+	margin: 15px auto 15px;
+	max-width: 265px;
+}
+
+.admin-panel {
+	padding: 12px 0;
+	background-color: #f8f8f8;
+    border-radius: 3px;
+    font-size: 18px;
+	width: 85%;
+	text-align: center;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.2 );
+}
+
+.admin-panel .text {
+	color: #888888;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+
+
+.admin-panel :hover { cursor: pointer; color: #555555; }
+
+.menu-panel {
+    /* width: 85%;
+
+	margin-top: 14px;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.2 ); */
+	}
+
+.menu-panel .row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu-panel .column-left {
+	float: left;
+	width: 85%;
+	margin-left: 10px;
+}
+
+.menu-panel .column-right {
+	float: right;
+	width: 15%;
+	padding: 10px;
+	text-align: right;
+}
+
+/* Clear floats after the columns */
+.menu-panel .row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.menu-panel a {
+	color: #888888;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+
+.menu-panel:hover .row:hover { background: #ebebeb; color: #555555; border-radius: 3px; }
+
+.menu-panel:hover a { color: #bebebe; }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
