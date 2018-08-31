@@ -1,6 +1,21 @@
 {
   "name": "angular-mail-autocomplete",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author":  "Jovin thariyath",
+  "license": "GPL V2",
+  "keywords": [
+    "angular",
+    "angular 6",
+    "angular 6 email",
+    "angular 6 email autocomplete",
+    "autocomplete",
+    "angular autocomplete"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hexad3cimal/angular-email-autocomplete.git"
+  },
+  "homepage": "https://github.com/hexad3cimal/angular-email-autocomplete",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
