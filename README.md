@@ -4,16 +4,30 @@ Autocomplete email module for Angular 6+. Supported domains
 'gmail.com','yahoo.com','msn.com','rediffmail.com','aol.com'
 
 Usage
-Import AngularMailAutocompleteModule in app.module.ts
+Import AngularMailAutocompleteModule into app.module.ts
 
-Add the directive in html
+```
+import {AngularMailAutocompleteModule} from 'angular-mail-autocomplete';
+imports: [
+    BrowserModule,AngularMailAutocompleteModule,....
+]
+```
 
-<autocomplete (selectedValue)="handleSelect($event)"></autocomplete>
 
-pass the function to handle the selected value into (selectedValue).
+Add the directive in the component you want to use. The selectedValue will output the value selected to the used component. Example usage is as follows.
 
-Now the seleced value will be available in the component
+```
+<autocomplete givenPlaceHolder="Sample Placeholder" (selectedValue)="handleSelect($event)"></autocomplete>
 
+
+export class AppComponent {
+
+    handleSelect(value){
+        console.log("Selected value will be available here"+value)
+    }
+ }
+
+```
 
 
 
