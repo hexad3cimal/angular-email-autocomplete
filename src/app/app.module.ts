@@ -1,6 +1,8 @@
-import { AngularMailAutocompleteModule } from './../../projects/angular-mail-autocomplete/src/lib/angular-mail-autocomplete.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularEmailAutocompleteModule } from './../../projects/angular-email-autocomplete/src/lib/angular-email-autocomplete.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +10,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule, AngularMailAutocompleteModule
+    BrowserModule, AngularEmailAutocompleteModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

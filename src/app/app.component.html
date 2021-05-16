@@ -1,3 +1,8 @@
-<autocomplete givenPlaceHolder="Sample Placeholder" [domainNames]="[
-'gmail.com', 'yahoo.com', 'msn.com', 'outlook.com', 'hotmail.com','live.com', 'uol.com.br', 'bol.com.br', 'globo.com'
-]" (selectedValue)="handleSelect($event)"></autocomplete>
+<form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+  <autocomplete givenPlaceHolder="Sample Placeholder" [domainNames]="domains"
+                (selectedValue)="handleSelect($event)"></autocomplete>
+  <input type="text" formControlName="firstName">
+  <input type="text" formControlName="lastName">
+
+  <button [disabled]="!sampleForm.valid">Submit</button>
+</form>

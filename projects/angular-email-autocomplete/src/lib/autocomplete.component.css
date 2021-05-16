@@ -1,0 +1,51 @@
+.panel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+
+}
+
+.input-panel {
+  background-color: #f8f8f8;
+  width: 100%;
+  margin: 0;
+  line-height: 2rem;
+}
+
+.input-panel .text {
+  color: #070000;
+}
+
+.input-panel :hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.dropdown-panel {
+  cursor: pointer;
+  margin-top: .2rem;
+  z-index: 999;
+  height: 2rem;
+}
+
+.dropdown-panel .dropdrown-list {
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+}
+
+.dropdown-panel .dropdrown-list .item {
+  font-size: 1rem;
+  margin: .3em;
+  line-height: 1rem;
+}
+
+.dropdown-panel .dropdrown-list .image {
+  margin: .5rem;
+}
+
+.dropdown-panel:hover .dropdrown-list:hover {
+  background: #ebebeb;
+  color: #555555;
+}

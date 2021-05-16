@@ -1,0 +1,24 @@
+{
+  "name": "angular-mail-autocomplete",
+  "version": "2.0.0",
+  "description": "Convert your input field to email autocomplete",
+  "author": "hexad3cimal",
+  "license": "GPL",
+  "repository": "https://github.com/hexad3cimal/angular-email-autocomplete.git",
+  "tags": [
+    "angular",
+    "email",
+    "email autocomplete",
+    "autocomplete",
+    "mail autocomplete",
+    "mail dropdown",
+    "email dropdown"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^11.2.11",
+    "@angular/core": "^11.2.11"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
