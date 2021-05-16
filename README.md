@@ -1,27 +1,75 @@
-# AngularEmailAutocompleteSample
+# Angular Mail Autocomplete
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Convert your input field to a drop-down with domain names appended.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm i angular-mail-autocomplete
+```
 
-## Code scaffolding
+## Options
+|   Property| Description | Sample |
+| ------------- | -------------  | ------------- |
+| givenPlaceHolder  | Placeholder value that needs to be displayed in the input field  | Enter your value here.. |
+| domainNames  | List of domain names that needs to be passed (value is mandatory but imgUrl is optional) | [{value: "gmail.com", imgUrl: 'url'},{value : "yahoo.com"}] |
+| selectedValue  | Here you have to pass in the function to receive the selected value by user   | handleSelect(value: string) |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+TS
 
-## Running unit tests
+```node
+export class AppComponent {
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+//If you want to use in a formgroup
+  formControlEmail = new FormControl('', [Validators.required]);
 
-## Running end-to-end tests
+  domains = [
+    {
+      value: 'gmail.com',
+      imgUrl: 'https://cdn4.iconfinder.com/data/icons/free-colorful-icons/360/gmail.png'
+    }, {value: 'yahoo.com'}, {value: 'msn.com'}, {value: 'outlook.com'}, {value: 'hotmail.com'}, {value: 'live.com'}
+  ];
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  sampleForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: this.formControlEmail
+  });
 
-## Further help
+//When ever user selects a value it will be available here
+  handleSelect(value: string): void {
+    console.log('value in parent' + value);
+    this.formControlEmail.setValue(value);
+  }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+//For forms
+  onSubmit(): void {
+    console.log(this.sampleForm.value);
+  }
+}
+```
+
+HTML
+
+```html
+<form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+  <autocomplete givenPlaceHolder="Sample Placeholder" [domainNames]="domains"
+                (selectedValue)="handleSelect($event)"></autocomplete>
+  <input type="text" formControlName="firstName">
+  <input type="text" formControlName="lastName">
+
+  <button [disabled]="!sampleForm.valid">Submit</button>
+</form>
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+GPL
